@@ -1,7 +1,8 @@
 import discord
 from discord.ext import commands
 
-class BOT(object):
+
+class BOT:
     def __init__(self):
         self.intents = discord.Intents.default()
         self.intents.message_content = True
@@ -10,7 +11,7 @@ class BOT(object):
         self.guild = None
         self.bot = commands.Bot(command_prefix='!', intents=self.intents)
 
-        @self.bot.tree.command(name="commandname",
+        @self.bot.tree.command(name="commandName",
                                description="My first application Command",
                                guild=discord.Object(id=9))
         async def first_command(interaction):
@@ -25,6 +26,7 @@ class BOT(object):
                 print(f"Bot csatlakozott a következő szerverhez: {self.guild.name}")
             else:
                 print("Nem található a szerver.")
+
 
 if __name__ == "__main__":
     BOT().bot.run("a")
