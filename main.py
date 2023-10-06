@@ -1,8 +1,9 @@
+"""Module providing a function printing python version."""
 import discord
 from discord.ext import commands
 
-
-class BOT:
+class BOT: # pylint: disable=too-few-public-methods
+    """Class representing a Bot"""
     def __init__(self):
         self.intents = discord.Intents.default()
         self.intents.message_content = True
