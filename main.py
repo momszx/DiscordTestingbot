@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class BOT:
+class BOT(object):
     def __init__(self):
         self.intents = discord.Intents.default()
         self.intents.message_content = True
@@ -10,8 +10,9 @@ class BOT:
         self.guild = None
         self.bot = commands.Bot(command_prefix='!', intents=self.intents)
 
-        @self.bot.tree.command(name="commandname", description="My first application Command", guild=discord.Object(
-            id=9))
+        @self.bot.tree.command(name="commandname",
+                               description="My first application Command",
+                               guild=discord.Object(id=9))
         async def first_command(interaction):
             await interaction.response.send_message("Hello!")
 
